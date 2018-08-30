@@ -1,0 +1,203 @@
+<html>
+    <head>
+        <title>Contact us</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <style type="text/css">
+            .details h1{
+                text-align: center;
+                color: azure;
+            }
+            body{
+                background-color:#1a1a1a;
+            }
+            .fill{
+                float: left;
+                margin-left: 180;
+                color: azure;
+                font-size: 20px;
+            }
+             input,textarea{
+                 width: 250;
+                 height: 40;
+                 border-radius: 8px;
+                 background-color: #333333;
+                 color: azure;
+                 border: 0;
+                             }
+            input[type=submit]{
+                background-color: #666666;
+                width: 100px;
+                font-size: 20px;
+            }
+            input[type=submit]:hover{
+                background-color: #99ffff;
+                color: black;
+            }
+            .about{
+                float: none;
+                margin-left: 750;
+                margin-top: 100;
+                color: azure;;
+                font-size: 20px;
+            }
+            .about ul li a{
+                color: azure;
+                margin: 2;
+                font-size: 20px;
+            }
+            .about ul li{
+                list-style: none;
+            }
+            .about ul li img{
+                background-color: azure;
+                vertical-align: text-top;
+                margin-right: 20;
+            }
+            .about ul li address{
+                display: inline;
+            }
+            .about ul li a:hover{
+                color: red;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="comhead clearfix">
+            <div class="comicon">
+                <img src="images/Capture01.JPG" width="200" height="200">
+            </div>
+            <div class="social">
+                <ul>
+                    <li><a href="https://www.facebook.com/"><img src="images/97.png" width="45" height="45"></a></li>
+                    <li><a href="https://twitter.com/"><img src="images/91.png" width="45" height="45"></a></li>
+                    <li><a href="https://www.linkedin.com/"><img src="images/93.png" width="45" height="45"></a></li>
+                </ul>
+            </div>
+            <div class="comname">
+                <h1>
+                    NIRMANI STUDIO
+                </h1>
+                <P>
+                    Every picture tells a story... let us help you tell yours...
+                </P>
+            </div>
+            <div class="navi clearfix">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Sevices</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Contact_Us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div><!--comhead-->
+        
+        <div class="details clearfix">
+            <h1>Contact Us</h1>
+            <div class="fill">
+                <form action="#" method="post" onsubmit="return confirmForm();">
+                    Name*<br>
+                    <input type="text" placeholder="Name" name="name" id="name"><br><br>
+                    Email*<br>
+                    <input type="text" placeholder="Email" name="email" id="email" onfocusout="return validateEmail();"><br><br>
+                    Phone*<br>
+                    <input type="text" placeholder="0XXXXXXXXX" name="phone" id="phone" onfocusout="return validatePhone();"><br><br>
+                    Event type*<br>
+                    <input type="text" placeholder="Ex: Birtday" name="event" id="event"><br><br>
+                    Event location*<br>
+                    <input type="text" placeholder="City or town" name="location" id="location"><br><br>
+                    Event date*<br>
+                    <input type="date" name="date" id="date"><br><br>
+                    How did you hear of us?<br>
+                    <input type="text" placeholder="Ex: Facebook" name="hear" id="hear"><br><br>
+                    Comments<br>
+                    <textarea placeholder="Comments" name="comment" id="comment"></textarea><br><br>
+                    <input type="submit" name="submit" value="Send" onclick="return validateform();"><br><br>                
+                </form>           
+            </div>
+            
+            <div class="about">
+                <ul>
+                    <li><img src="images/83.png" width="30" height="30"> Yasiru Kavishka</li><br>
+                    <li><img src="images/82.png" width="30" height="30"> +9477-5552222</li><br>
+                    <li><img src="images/85.png" width="30" height="30">  <address>  212/A, Highlevel road, Maharagama.</address></li><br>
+                    <li><img src="images/84.png" width="30" height="30"><a href="mailto:nirmanistudio@gmail.com?"> nirmanistudio@gmail.com</a></li>        
+                </ul>
+            </div>
+        </div>
+        
+        <div class="bottom">
+            <p>
+                <b>Copyrigrt &copy; 2018 Nirmani Studio, SriLanka | All rights Reserved.2018</b>
+            </p>
+        </div>
+        <script type"text/javascript">
+           
+            function validateform(){
+                var name=document.getElementById('name').value;
+                var email=document.getElementById('email').value;
+                var phone=document.getElementById('phone').value;
+                var event=document.getElementById('event').value;
+                var location=document.getElementById('location').value;
+                var date=document.getElementById('date').value;
+                
+                if(name==''){
+                    alert("Please enter Name!");
+                    return false;                    
+                }
+                else if(email==''){
+                    alert("Please enter Email!");
+                    return false;
+                }
+                else if(phone==''){
+                    alert("Please enter Phone number!");
+                    return false;
+                }
+                else if(event==''){
+                    alert("Please enter Event type!");
+                    return false;
+                }
+                else if(location==''){
+                    alert("Please enter Event location!");
+                    return false;
+                }
+                else if(date==''){
+                    alert("Please enter Date!");
+                    return false;
+                }
+            }
+            
+            
+             function validateEmail(){
+                var email= document.getElementById('email').value;
+                
+                var at= email.indexOf("@");
+                var dot= email.lastIndexOf(".");
+                
+                if(at<1 || dot<at+2 || dot+2>email.length){
+                    alert("Invalid Email format!");
+                    return false;
+                }                
+            }
+            function validatePhone()
+            {
+                var phone=document.getElementById('phone').value;
+                var phone_length= phone.length;
+                
+                if(isNaN(phone)){
+                    alert("Invaid phone number format!");
+                    return false;
+                }
+
+                else if(phone_length!=10){
+                    alert("Phone number should be 10 numbers!");
+                    return false;
+                }                
+            }
+           function confirmForm(){   
+	           confirm("Do you want to submit?");
+            }
+        </script>
+    </body>
+</html>
